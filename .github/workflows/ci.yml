@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup build environment
+      run: |
+        # Setup build environment (e.g., install toolchain)
+        echo "Setup build environment"
+    
+    - name: Build firmware
+      run: |
+        # Run firmware build script
+        echo "Build firmware"
+        # cd firmware && make
+    
+    - name: Run static analysis
+      run: |
+        # Run static analysis tools (e.g., cppcheck, clang-tidy)
+        echo "Run static analysis"
+    
+    - name: Run tests
+      run: |
+        # Run tests
+        echo "Run tests"
+        # cd firmware/tests && make test
